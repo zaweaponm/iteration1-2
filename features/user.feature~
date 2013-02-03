@@ -1,0 +1,11 @@
+Feature: User can see all of Student Health Service Page
+
+Scenario: User can see information
+  When I am on Student Health Service Home page
+  Then I should see "Home"
+  And I should see "About"
+  And I should see "Links"
+  And I should see "Contact"
+  And I should see "Services"
+  And I should see "Information"
+  And I should see "Administratior"

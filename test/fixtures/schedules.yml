@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  d_fname: MyString
+  d_lname: MyString
+
+two:
+  d_fname: MyString
+  d_lname: MyString

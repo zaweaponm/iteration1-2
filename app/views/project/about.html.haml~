@@ -1,0 +1,234 @@
+-#  This file is app/views/project/about.html.haml
+#about
+ 
+
+
+.wrapper.row1
+  %header#header.clear{:style => "background-image: url('/assets/header.jpg');"}
+    %hgroup
+      %h1
+        %a{:href => "#", :style => "background:transparent;"} Student Health Service
+      %h2 Thammasat University
+      %a{:href => "admin.php", :style => "float:right;background:transparent; color:#FFF;padding-right:10px;"} Administrator
+
+    %nav
+      %ul.clear
+        %li
+          %a.navi=link_to 'Home ', index_path
+        %li
+          %a.navi=link_to 'About ', about_path
+        %li
+          %a.navi{:href => "#"} Links
+          %ul
+            %li
+              %a{:href => "#"} Link 1
+            %li
+              %a{:href => "#"} Link 2
+            %li
+              %a{:href => "#"} Link 3
+        %li
+          %a.navi=link_to 'Contact', contact_path
+        %li
+          %a.navi=link_to 'Services', services_path
+.wrapper.row2
+  / Slider
+/ content
+.wrapper.row3
+  #container.clear
+    #homepage
+      / Services
+      %section#services
+        .three_third{:style => "font-size:18px;"}
+
+          %h3 Link to pivotaltracker
+          %h3
+            %a=link_to 'pivottracker',@tracker
+          %h3 Link to github repository
+          %h3
+            %a=link_to 'github repository',@github
+          %h3 Requirement
+          %p
+            ปกติแล้วเว็บของงานอนามัยจะขึ้นกับหน่วยงาน สปข. ทำให้ลูกค้าไม่สามารถอัพเดทข้อมูลได้ด้วยตัวเอง
+            และในการอัพเดทข้อมูลแต่ละครั้งต้องผ่านการอนุมัติจากสปข.
+            ซึ่งใช้เวลาในการจะอนุมัตินานทำให้บางครั้งข้อมูลที่จะอัพเดทหมดอายุงานไปก่อนที่จะได้อัพลงเว็บไซท์
+            อีกส่วนที่สำคัญที่ลูกค้ารู้สึกไม่ค่อยพอใจคือ หน้าเว็บไซท์ดูไม่น่าสนใจและไม่สามารถตอบโต้กับผู้ใช้งานได้ตามความต้องการ ดังนั้นสิ่งที่ลูกค้าต้องการคือ
+          %ul
+            %li 1.ลูกค้าต้องการที่จะสามารถอัพเดทข้อมูลได้ด้วยตัวเอง
+            %li 2.ลูกค้าต้องการให้หน้าเว็บไซท์ดูมีความน่าสนใจ
+            %li 3.ลูกค้าต้องการให้ข้อมูลในแตละส่วนที่ไม่เกี่ยวข้องกันแยกออกจากกันอย่างชัดเจน (จัดระเบียบของข้อมูลในหน้าเว็บ ไซท์)
+            %li 4.ลูกค้าต้องการให้หน้าเว็บไซท์สามารถตอบโต้กับUserที่เข้ามาใช้เว็บไซท์งานได้
+            %li 5.ลูกค้าต้องการให้มีการเพิ่มในส่วนของช่องทางการติดต่อเพื่อปรึกษาปัญหาต่างๆระหว่างUserกับAdminในเว็บไซท์
+          %h3 ER-diagram
+          =image_tag('er-diagram.png', :alt => "er-diagram image", :width => 500, :height => 171 )
+          %p
+            %h3 User Story
+            =image_tag("storybroad.png", :alt => "storybroad image", :width => 500, :height => 350 )
+            %p Feature: user สามารถเข้ามาดูเนื้อหาต่างๆในส่วนของกองอนามัยได้
+            %p Scenario1 : user สามารถเข้ามาดูภาพกิจกรรมต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Student Health Service home page”
+            %p When เราคลิกเลือกที่ “[ชื่ออัลบัม]”
+            %p Then เราควรจะไปที่ “Activities page”
+            %p And เราควรจะเห็นภาพกิจกรรมทั้งหมดที่อยู่ใน “[ชื่ออัลบัม]”
+            %p Scenario2 : user สามารถเข้ามาดูข่าวสารประชาสัมพันธ์ต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Student Health Service home page”
+            %p When เราคลิกเลือกที่ “[หัวข้อข่าวประชาสัมพันธ์]”
+            %p Then เราควรจะไปที่ “Hot News page”
+            %p And เราควรจะเห็นภาพ และ เนื้อหาของข่าวที่อยู่ใน “[หัวข้อข่าวประชาสัมพันธ์]”
+            %p Scenario3 : user สามารถเข้ามาดูสาระน่ารู้ต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Student Health Service home page”
+            %p When เราคลิกเลือกที่ “[หัวข้อสาระน่ารู้]”
+            %p Then เราควรจะไปที่ “Knowledge page”
+            %p And เราควรจะเห็นเนื้อหาสาระที่อยู่ใน “[หัวข้อสาระน่ารู้]”
+            %p Scenario4 : user สามารถเข้ามาดูรายละเอียดต่างๆเกี่ยวกับกองอนามัยได้
+            %p Given เรากำลังอยู่ที่ “Student Health Service home page”
+            %p When เราคลิกเลือกที่ “About me”
+            %p Then เราควรจะไปที่ “About me page”
+            %p And เราควรจะเห็นรายละเอียดต่างๆเกี่ยวกับกองอนามัย
+            %h3 Feature: admin สามารถเข้ามา เพิ่ม แก้ไข ลบ เนื้อหาต่างๆในส่วนของกองอนามัยได้
+            %p Scenario1 : admin สามารถเข้ามาเพิ่ม แก้ไข หรือ ลบภาพกิจกรรมต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Admin page”
+            %p When เราคลิกเลือกที่ “Activity”
+            %p Then เราควรจะไปที่ “Activities page”
+            %p And เราควรจะเห็นตาราง”Activity” ที่มี column edit และ delete เพิ่มเข้ามด้วย
+            %p And เราควรจะเห็น ปุ่มสำหรับ Add กิจกรรมเพิ่มเติมด้วย
+            %p Scenario2 : admin สามารถเข้ามาเพิ่ม แก้ไข หรือ ลบ ข่าวประชาสัมพันธ์ต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Admin page”
+            %p When เราคลิกเลือกที่ “Information”
+            %p Then เราควรจะไปที่ “Information page”
+            %p And เราควรจะเห็นตาราง”Information” ที่มี column edit และ delete เพิ่มเข้ามด้วย
+            %p Andเราควรจะเห็น ปุ่มสำหรับ Add ข่าวสารประชาสัมพันธ์เพิ่มเติมด้วย
+            %p Scenario3 : admin สามารถเข้ามาเพิ่ม แก้ไข หรือ ลบ สาระน่ารู้ต่างๆได้
+            %p Given เรากำลังอยู่ที่ “Admin page”
+            %p When เราคลิกเลือกที่ “Knowledge”
+            %p Then เราควรจะไปที่ “Knowledge page”
+            %p And เราควรจะเห็นตาราง”Knowledge” ที่มี column edit และ delete เพิ่มเข้ามด้วย
+            %p And เราควรจะเห็น ปุ่มสำหรับ Add สาระน่ารู้เพิ่มเติมด้วย
+            %h3 Member
+            %ul
+              %li นายอุกฤษฏ์ วณิชย์รุจี 5310610190
+              %li นาย วัชรวิทย์ เสาวคนธ์ 5310612584
+              %li นายโชติวุฒิ ธาดาธีรธรรม 5310611354
+              %li นางสาว ณัฏฐา สันตะวลิ้ม 5310613178
+              %li นางสาว ณัชชา อัครเบญจสิริ 5310613335
+            %h3
+              Feature: Admin can manage information table
+              Background: informations in database
+              Given the following informations exist:
+            %h3 | topic | content | picture | institution
+            %h3 | 1test topic | 1test content | no image | 1test institution
+            %h3 | 2test topic | 2test content | no image | 2test institution
+            %h3 | 3test topic | 3test content | no image | 3test institution
+            %h3 | 4test topic | 4test content | no image | 4test institution
+            %p
+              Scenario: Admin can add information record
+            %p
+              Given I am on the information page
+            %p
+              When I follow "Create new information"
+            %p
+              Then I should be on the create new information page
+            %p
+              When I fill in "Topic" with "new test topic"
+            %p
+              And I fill in "Content" with "new test content"
+            %p
+              And I fill in "Picture" with "new test picture"
+            %p
+              And I fill in "Institution" with "new test institution"
+            %p
+              When I press "Create new information"
+            %p
+              Then I should be on the information page
+            %p
+              And I should see "new test topic"
+            %p
+              Scenario: Admin can edit information record
+            %p
+              Given I am on the information page
+            %p
+              When I follow "More about '1test topic'"
+            %p
+              Then I should be on the details of content page for '1test topic'
+            %p
+              When I follow "Edit"
+            %p
+              Then I should be on the edit page for '1test topic'
+            %p
+              When I change "1test topic" with "new test topic"
+            %p
+              When I press "Update Information"
+            %p
+              Then I should be on the details of content page for 'new test topic'
+            %p
+              And I should see "new test topic"
+            %p
+              Scenario: Admin can delete information record
+            %p
+              Given I am on the information page
+            %p
+              When I follow "More about '2test topic'"
+            %p
+              Then I should be on the details of content page for '2test topic'
+            %p
+              When I press "Delete"
+            %p
+              Then I should be on the information page
+            %p
+              And I should not see "2test topic"
+            %p
+              Feature: User can see all of Student Health Service Page
+            %p
+              Scenario: User can see information
+            %p
+              When I am on Student Health Service Home page
+            %p
+              Then I should see "Information"
+            %p
+              And I should see "Activities"
+            %p
+              And I should see "Knowledges"
+            %p Scenario1 : user สามารถเข้ามาดูภาพกิจกรรมต่างๆได้
+               
+             
+        .half
+          %p
+      %section#services2
+        .half
+      / / Services
+    / / content body
+/ Footer
+.wrapper.row4
+  #footer.clear
+    %section.half
+      %h2.title ภารกิจหลัก
+      %nav
+        %ul
+          %li.first 1. บริการสุขภาพนักศึกษา  (Health  Services)
+          %li 2. ประกันอุบัติเหตุนักศึกษา  (Accident  Insuranec)
+          %li 3. ส่งเสริมสุขภาพนักศึกษา  (Health  Promotion)
+    / Section Three
+    %section.half
+      %h2.title ประกันอุบัติเหตุนักศึกษา
+      %nav
+        %p.title
+          บริการให้คำแนะนำปรึกษาและอำนวยความสะดวกแก่นักศึกษา  เรื่องการเรียกร้องค่าสินไหมทดแทนเนื่องจากอุบัติเหตุ  รวมถึงการวางแผนการรักษา และฟื้นฟูสมรรถภาพร่างกาย
+          ภายหลังการประสบอุบัติเหตุ
+        %ul
+          %li.first
+            %a{:href => "#"} หน่วยงานผู้รับผิดชอบ
+          %li
+            %a{:href => "#"} การปฏิบัติกรณีนักศึกษาประสบอุบัติเหตุ
+          %li
+            %a{:href => "#"} หลักฐานเอกสารที่ใช้ในการประกอบการพิจารณาเรียกร้องค่าสินไหมทดแทน
+          %li
+            %a{:href => "#"} สิทธิการรักษาพยาบาลในโรงพยาบาลธรรมศาสตร์
+          %li
+            %a{:href => "#"} แบบฟอร์มเรียกค่าสินไหมทดแทน
+          %li
+            %a{:href => "#"} แบบฟอร์มรับเงินชดเชยใช้ค่าสินไหมทดแทน
+/ Copyright
+.wrapper.row5.ora
+  %footer#copyright.clear
+    %p.fl_left Copyright © 2012 - All Rights Reserved
+    %p.fl_right
+      %a{:href => "#", :style => "background:transparent;"} Thammasat University
